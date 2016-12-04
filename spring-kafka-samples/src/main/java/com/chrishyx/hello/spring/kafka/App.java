@@ -11,19 +11,9 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class App {
 
-    @Bean
-    public Producer getProducer() {
-        return new Producer();
-    }
-
-    @Bean
-    public Consumer getConsumer() {
-        return new Consumer();
-    }
-
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(App.class, args);
         Producer producer = ctx.getBean(Producer.class);
-        System.out.println(producer);
+        producer.send();
     }
 }
