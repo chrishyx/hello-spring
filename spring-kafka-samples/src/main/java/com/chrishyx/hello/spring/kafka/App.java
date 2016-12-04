@@ -15,5 +15,6 @@ public class App {
         ApplicationContext ctx = SpringApplication.run(App.class, args);
         Producer producer = ctx.getBean(Producer.class);
         producer.send();
+        System.exit(0);
     }
 }
